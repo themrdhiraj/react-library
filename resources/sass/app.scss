@@ -1,5 +1,5 @@
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Nunito");
+@import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
 
 // Variables
 @import "variables";
@@ -7,6 +7,4 @@
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
 
-body {
-    font-family: "Acme", sans-serif;
-}
+@import "node_modules/font-awesome/scss/font-awesome.scss";

@@ -1,16 +1,19 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-export default class ReturnBook extends Component {
+export default class IssuedBooks extends Component {
     render() {
         return (
-            <div className="card mb-2">
-                <div className="card-header">Return book</div>
+            <div className="card">
+                <div className="card-header">
+                    Total Issued Books{" "}
+                    <span className="badge badge-info">150</span>
+                </div>
                 <div className="card-body">
                     <form>
-                        <label htmlFor="studentisbn">Student ISBN</label>
+                        <label htmlFor="bookisbn">Search by Book ISBN</label>
                         <input
-                            id="studentisbn"
+                            id="bookisbn"
                             type="numeric"
                             className="form-control"
                             aria-describedby="isbnHelp"

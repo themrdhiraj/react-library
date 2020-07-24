@@ -1,43 +1,36 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Sidebar from "./components/Sidebar";
+import { Navbar } from "./components/Navbar";
 import Home from "./components/Home";
 
 import AddBook from "./components/books/AddBook";
+import { Book } from "./components/books/Book";
 import AddStudent from "./components/students/AddStudent";
+import AllStudents from "./components/students/AllStudents";
 import IssueBook from "./components/books/IssueBook";
+import IssuedBooks from "./components/books/IssuedBooks";
 import ReturnBook from "./components/books/ReturnBook";
 import BookReport from "./components/books/BookReport";
-import StudentReport from "./components/students/StudentReport";
-import Penalty from "./components/Penalty";
 import Settings from "./components/Settings";
 
 function App() {
     return (
         <Router>
-            <div className="container-fluid">
-                <div className="row">
-                    <div className="col-3">
-                        <Sidebar />
-                    </div>
-                    <div className="col-auto">
-                        <Switch>
-                            <Route component={Home} exact path="/" />
-                            <Route component={AddBook} path="/addBook" />
-                            <Route component={AddStudent} path="/addStudent" />
-                            <Route component={IssueBook} path="/issueBook" />
-                            <Route component={ReturnBook} path="/returnBook" />
-                            <Route component={BookReport} path="/bookReport" />
-                            <Route
-                                component={StudentReport}
-                                path="/studentReport"
-                            />
-                            <Route component={Penalty} path="/penalty" />
-                            <Route component={Settings} path="/settings" />
-                        </Switch>
-                    </div>
-                </div>
+            <Navbar />
+            <div className="container">
+                <Switch>
+                    <Route component={Home} exact path="/" />
+                    <Route component={Book} path="/book" />
+                    <Route component={AddStudent} path="/addStudent" />
+                    <Route component={AllStudents} path="/allStudents" />
+                    <Route component={AddBook} path="/addBook" />
+                    <Route component={IssueBook} path="/issueBook" />
+                    <Route component={IssuedBooks} path="/issuedBook" />
+                    <Route component={ReturnBook} path="/returnBook" />
+                    <Route component={BookReport} path="/bookReport" />
+                    <Route component={Settings} path="/settings" />
+                </Switch>
             </div>
         </Router>
     );
