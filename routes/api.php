@@ -14,6 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+//Departments
+Route::get('/departments', 'LibraryController@getAllDepartments');
+Route::post('/department', 'LibraryController@storeDepartment');
+Route::delete('/department/{id}', 'LibraryController@deleteDepartment');
+
+//Books
+Route::get('/books', 'LibraryController@getAllBooks');
+Route::post('/book/storeBook', 'LibraryController@storeBook');
+Route::get('/book/{id}/getOneBook', 'LibraryController@getOneBook');
+Route::put('/book/{id}/updateBook', 'LibraryController@updateBook');
+Route::delete('/book/{id}', 'LibraryController@deleteBook');
