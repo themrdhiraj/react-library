@@ -1,3 +1,4 @@
+- Add & Delete Department (#1)
 - Database
 - Template Complete
 - Route Complete
